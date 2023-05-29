@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Second task</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="oglav">
+            <div class="bring">
+                <h1>Bring it all together</h1>
+            </div>
+            <div class="fast">
+                <h2>The fastest way to combine your favorite tools and APIs to build the fastest sites, stores, and apps
+                    for
+                    the web. </h2>
+            </div>
+
+        </div>
+
+
+        <div class="main-filter">
+
+            <div class="checkboxiki">
+
+                <div class="checkboxiki-levo">
+
+                    <div class="news2023">
+                        <label class="label">
+                            <input type="checkbox" class="checkbox" > <!--  disabled="disabled" -->
+                            <span class="fake">
+
+                            </span>
+                            <span class="text">
+
+                            </span>
+                            </input>
+                        </label>
+                        <p>новинки 2023</p>
+
+                    </div>
+
+
+                    <div class="nalichie">
+                        <label class="label">
+                            <input type="checkbox" class="checkbox testirovanie" ><!--  checked="checked"  disabled="disabled" -->
+                            <span class="fake">
+
+                            </span>
+                            <span class="text">
+
+                            </span>
+                            </input>
+                        </label>
+                        <p>в наличии</p>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+                <div class="sbros">
+                    <button>сбросить</button>
+                </div>
+
+
+            </div>
+
+            <div class="search">
+
+                <!-- по ситуации либо прсото img либо пихай в div -->
+                <img src="./img/find.svg" alt="">
+                <input class="text-field__input" type="text"  name="login" id="login"
+                     placeholder="Поиск по ключевым словам ...">  <!-- disabled="disabled" -->
+                
+
+            </div>
+
+            <div class="filters">
+                <div class="color">
+                    <div class="select">
+                        <input class="select__input" type="hidden" name="">
+                        <div class="select__head">
+                            <p>Цвет</p> </div>
+                        <ul class="select__list " style="display: none;">
+                                <li class="select__item">Синий</li>
+                                <li class="select__item">Желтый</li>
+                                <li class="select__item">Красный</li>
+                                <li class="select__item">Зеленый</li>
+                                <li class="select__item">Голубой</li>
+
+
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="size">
+                    <div class="select">
+                        <input class="select__input" type="hidden" name="">
+                        <div class="select__head vtoroy_head">
+                            <p>Размер</p> </div>
+                        <ul class="select__list" style="display: none;">
+                                <li class="select__item">Первый</li>
+                                <li class="select__item">Второй</li>
+                                <li class="select__item">Третий</li>
+                                <li class="select__item">Четвертый</li>
+                                <li class="select__item">Пятый</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="approve">
+                    <button>Применить фильтр</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+var testirovanie = document.querySelector('.testirovanie');
+var sbrosDiv = document.querySelector('.sbros');
+var checkboxes = document.querySelectorAll('.checkbox');
+var input = document.querySelector('.text-field__input');
+
+function checkNewClass() {
+  var checkedCount = document.querySelectorAll('.checkbox:checked').length;
+  if (checkedCount > 0 || input.value !== '') {
+    sbrosDiv.classList.add('new');
+  } else {
+    sbrosDiv.classList.remove('new');
+  }
+}
+
+testirovanie.addEventListener('change', checkNewClass);
+
+for (var i = 0; i < checkboxes.length; i++) {
+  checkboxes[i].addEventListener('change', checkNewClass);
+}
+
+input.addEventListener('input', checkNewClass);
+
+ </script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+jQuery(($) => {
+  $('.select').on('click', '.select__head', function() {
+    if ($(this).hasClass('open')) {
+      $(this).removeClass('open');
+      $(this).next().fadeOut();
+    } else {
+      $('.select__head').removeClass('open');
+      $('.select__list').fadeOut();
+      $(this).addClass('open');
+      $(this).next().fadeIn();
+    }
+  });
+
+  $('.select').on('click', '.select__item', function() {
+    $('.select__head').removeClass('open');
+    $(this).parent().fadeOut();
+    var extractedWord = $(this).text();
+    extractedWord = '<p>' + extractedWord + '</p>'; // Adding <p> tags
+    $(this).parent().prev().html(extractedWord);
+    $(this).parent().prev().prev().val($(this).text());
+    $('.sbros').addClass('new'); // Add the `new` class to the `sbros` div
+  });
+
+  $(document).click(function(e) {
+    if (!$(e.target).closest('.select').length) {
+      $('.select__head').removeClass('open');
+      $('.select__list').fadeOut();
+    }
+  });
+});
+
+
+    </script>
+    <script>
+const approveButton = document.querySelector(".approve button");
+const textFieldInput = document.querySelector(".text-field__input");
+
+approveButton.addEventListener("click", function () {
+  checkboxes.forEach((checkbox) => checkbox.setAttribute("disabled", "disabled"));
+  textFieldInput.setAttribute("disabled", "disabled");
+});
+</script>
+</body>
+
+</html>

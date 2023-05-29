@@ -1,0 +1,266 @@
+
+body{
+    margin: 0px;
+    font-family: 'Manrope', sans-serif;
+}
+
+.container{
+
+    border-bottom: 6px solid #2B427E;
+}
+.colored li::marker{
+    color: #2B427E;
+}
+.colored{
+	margin: 0;
+}
+.colored li{
+	width: 899px;
+	font-size: 20px;
+	line-height: 32px;
+	padding-left: 20px;
+}
+.colored li:nth-child(3){
+	padding-bottom: 0;
+}
+p{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: #777777;
+    margin-left: 250px;
+    line-height: 36px;
+    margin: 0 570px 0 250px;
+}
+.otstup{
+    margin-top: 17px;
+	width: 970px;
+}
+li{
+    color: #777777;
+    font-weight: 500;
+    margin: 0 570px 0 250px;
+    padding-bottom: 12px;
+}
+.pochta{
+    color: #2B427E;
+    text-decoration: underline;
+}
+.btn{
+    background-color: #2B427E;
+    color: white;
+    padding: 16px 40px;
+    border-radius: 2px;
+    font-family: 'Manrope';
+    font-weight: 700;
+    font-size: 18px;
+	width: 365px;
+	height: 57px;
+	background: #2B427E;
+	border-radius: 2px;
+	margin-bottom: 48px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+.btn:hover{
+    background-color: #3E5EB1;
+}
+.btn:active{
+    background-color: #1C2A50;
+}
+button#myBtn{
+	margin-left: 250px;
+	width: 250px;
+	height: 57px;
+	margin-top: 56px;
+	margin-bottom: 100px;
+}
+.logo{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+h1{
+    margin-left: 250px;
+    margin-top: 100px;
+    margin-bottom: 32px;
+    margin-right: 570px;
+    font-weight: 800;
+    color: #121212;
+    font-size: 48px;
+}
+
+
+
+/* For modal windows */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+/* Модальное содержание */
+.modal-content {
+  position: relative;
+  margin: auto 762px auto 697px;
+  padding: 0;
+  border: 1px solid #888;
+  width: 459.4px;
+  height: 579.4px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  background: #FFFFFF;
+  border-radius: 2px;
+}
+
+/* Добавить анимацию */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* Кнопка закрытия */
+.close {
+position: absolute;
+  color: white;
+  right: -64px;
+	top: -40px;
+	cursor: pointer;
+
+}
+.close img{
+	width: 40px;
+	height: 40px;
+}
+
+
+.modal-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header {
+  text-align: center;
+  margin: 0;
+  width: 365px;
+  height: 44px;
+margin-top: 48px;
+}
+.modal-header h2{
+  font-family: 'Manrope', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+  margin: 0 auto;
+
+}
+
+.modal-body {
+  padding: 0px;
+}
+
+.modal-footer {
+  color: white;
+}
+.personal{
+  width: 365px;
+  height: 57px;
+  margin-top: 20px;
+  border-radius: 2px;
+  outline: none;
+}
+.personal:nth-child(1){
+	margin-top: 0px;
+
+  }
+.modal-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.text-field__input{
+  padding: 16px 20px;
+  width: 323.4px;
+  height: 23.4px;
+  outline: none;
+  background: #F4F4F4;
+  border-radius: 2px;
+  border: 1px solid #E8E8E8;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+/* Files Add */
+
+.text-center{
+  text-align: center;
+  margin-bottom: 50px;
+  }
+  
+  .custom-file-wrp{
+	
+	margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .filename{
+    width: 300px;
+  }
+  .custom-file input[type="file"]
+  {
+    display: none
+  }
+  
+  .custom-file label{
+	
+    width: 191.4px;
+    height: 30.4px;
+    padding: 13px 86px 12px 86px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Manrope', sans-serif;
+    font-style:normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+    color: #2B427E;
+    border: 1px solid #E8E8E8;
+	border-radius: 2px;
+  }
+  
+  .redakt img{
+    margin-left: 8px;
+  }
+  .custom-file
+  {
+    height: 57px;
+    width: 365px;
+  }
